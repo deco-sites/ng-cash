@@ -11,18 +11,19 @@ import { headerHeight } from "./constants.ts";
 export interface NavItem {
   label: string;
   href: string;
-  children?: Array<{
-    label: string;
-    href: string;
-    children?: Array<{
-      label: string;
-      href: string;
-    }>;
-  }>;
-  image?: {
-    src?: Image;
-    alt?: string;
-  };
+  highlight?: boolean;
+  // children?: Array<{
+  //   label: string;
+  //   href: string;
+  //   children?: Array<{
+  //     label: string;
+  //     href: string;
+  //   }>;
+  // }>;
+  // image?: {
+  //   src?: Image;
+  //   alt?: string;
+  // };
 }
 
 export interface Props {
@@ -49,7 +50,6 @@ export interface Props {
 
 function Header(
   {
-    alerts,
     searchbar: _searchbar,
     products,
     navItems = [],
@@ -60,8 +60,7 @@ function Header(
   return (
     <>
       <header style={{ height: headerHeight }}>
-        <div class="bg-base-100 fixed w-full z-50">
-          <Alert alerts={alerts} />
+        <div class="bg-base-100 fixed w-full z-50 bg-black">
           <Navbar items={navItems} searchbar={searchbar} />
         </div>
 

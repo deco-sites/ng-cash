@@ -32,23 +32,36 @@ function CookieConsent() {
     <>
       <div
         id={id}
-        class="transform-gpu translate-y-[200%] transition fixed bottom-0 sm:bottom-4 w-screen z-50"
+        class="transform-gpu translate-y-[200%] transition fixed bottom-0 w-screen z-50 bg-base-100"
       >
-        <div class="container px-4 py-4 rounded border border-base-200 flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-base-100">
-          <span class="flex-grow text-sm">
-            Utilizamos cookies em nosso site para melhorar seu desempenho,
-            segurança e personalizar conteúdo e anúncios.
+        <div class="px-4 py-6 mx-auto flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow max-w-[1000px]">
+          <span class="text-sm leading-4">
+            Ao clicar em{" "}
+            <span class="font-semibold">“Aceitar”</span>, você concorda com o
+            armazenamento de cookies em seu dispositivo para aprimorar a
+            navegação no site, analisar o uso do site e auxiliar em nossos
+            esforços de marketing. Veja nossa{" "}
+            <a href="https://www.deco.cx">
+              <span class="underline text-sm">
+                política de privacidade
+              </span>
+            </a>{" "}
+            para mais informações.
           </span>
 
-          <a href="https://www.deco.cx">
-            <span class="underline text-sm">
-              Nossa política de privacidade
-            </span>
-          </a>
-
-          <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
-            <Button data-button-cc-accept>Aceitar</Button>
-            <Button data-button-cc-close class="btn-outline">Fechar</Button>
+          <div class="flex flex-col sm:flex-row gap-4 w-full">
+            <Button
+              data-button-cc-close
+              class="btn-outline rounded-full py-[10px] px-5 normal-case min-w-[96px] w-full max-w-[140px]"
+            >
+              Recusar
+            </Button>
+            <Button
+              data-button-cc-accept
+              class="rounded-full py-[10px] px-5 normal-case min-w-[96px] w-full max-w-[140px]"
+            >
+              Aceitar
+            </Button>
           </div>
         </div>
       </div>
