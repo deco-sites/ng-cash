@@ -32,7 +32,7 @@ function CookieConsent() {
     <>
       <div
         id={id}
-        class="transform-gpu translate-y-[200%] transition fixed bottom-0 w-screen z-50 bg-base-100"
+        class="transform-gpu translate-y-[200%] transition fixed bottom-0 w-screen z-50 bg-neutral-200"
       >
         <div class="px-4 py-6 mx-auto flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow max-w-[1000px]">
           <span class="text-sm leading-4">
