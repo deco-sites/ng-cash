@@ -47,6 +47,7 @@ export default function Hero({ qrCode, banner }: Props) {
         <script
           src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
           defer
+          async
         />
         {/* @ts-ignore */}
         <lottie-player
