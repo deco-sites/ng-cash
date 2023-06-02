@@ -1,5 +1,6 @@
 import Image from "deco-sites/std/components/Image.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
+import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
@@ -42,7 +43,8 @@ export default function Hero({ qrCode, banner }: Props) {
           </a>
         </div>
       </div>
-      <div class="col-start-3 row-span-2 max-h-[440px] max-w-[476px] border-y sm:border border-base-100 relative overflow-hidden">
+      <div class="col-start-3 row-span-2 isolate max-h-[440px] max-w-[476px] border-y sm:border border-base-100 relative overflow-hidden">
+        <Icon id="CardBackground" size={476} class="w-[130%]" />
         {/* teste */}
         <script
           src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
@@ -56,6 +58,7 @@ export default function Hero({ qrCode, banner }: Props) {
           speed="1"
           style="width: 130%;"
           autoplay
+          class="bg-black absolute z-10 top-0 "
         />
       </div>
       <div class="col-start-1 row-start-3 col-span-3 border-y border-base-100">
