@@ -66,7 +66,7 @@ export default function BannerWithText({
           loading="lazy"
         />
       </Picture>
-      <div class="py-16 px-8 sm:px-[200px] sm:py-[10%] items-center flex flex-col lg:flex-row lg:grid lg:grid-cols-[.25fr_auto] gap-5  lg:gap-[130px] ">
+      <div class="py-16 px-8 sm:px-[200px] sm:py-[10%] items-center flex flex-col md:flex-row md:grid md:grid-cols-[.25fr_auto] gap-5  lg:gap-[130px] ">
         <div
           class={`grid gap-4 md:gap-6 w-[170px] lg:w-[320px] `}
         >
@@ -101,7 +101,7 @@ export default function BannerWithText({
         {title &&
           (
             <div class="py-6 md:py-0 md:pb-[40px] flex items-center mt-6 text-white">
-              <h2 class="text-[6vw] lg:text-[3vw] font-medium">
+              <h2 class="text-[6vw] md:text-[3vw] font-medium">
                 {title}
               </h2>
             </div>

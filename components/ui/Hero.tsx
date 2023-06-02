@@ -19,14 +19,14 @@ export interface Props {
 export default function Hero({ qrCode, banner }: Props) {
   return (
     <section class=" w-full px-0 mx-auto flex flex-col lg:grid  lg:grid-cols-[4fr_240px_auto] lg:grid-rows-[auto_auto_auto] text-white">
-      <span class="col-span-2 text-[9vw] sm:text-[6.5vw] font-bold uppercase border-y border-base-100 flex items-center py-2 px-4 sm:pl-9">
+      <span class="font-mono col-span-2 text-[9vw] sm:text-[6.5vw] font-bold uppercase border-y border-base-100 flex items-center py-2 px-4 sm:pl-9">
         Você no controle
       </span>
       <span class="col-start-1 row-start-2 text-[9vw] sm:text-[6.5vw] font-bold uppercase border-y border-base-100 flex items-center py-2 px-4 sm:pl-9">
         da sua grana.
       </span>
-      <div class="hidden sm:flex col-start-2 row-start-2 border-y border-base-100">
-        <span class="flex hover:text-[#7d2cff] [writing-mode:vertical-rl] rotate-180 uppercase justify-center border border-base-100 text-xl font-semibold px-1">
+      <div class="hidden lg:flex col-start-2 row-start-2 border-y border-base-100">
+        <span class="flex hover:text-[#7d2cff] [writing-mode:vertical-rl] rotate-180 uppercase justify-center border border-base-100 text-[1.5vw] font-medium px-2 leading-none">
           <a href={qrCode.href}>
             Baixe Agora
           </a>
@@ -43,7 +43,7 @@ export default function Hero({ qrCode, banner }: Props) {
           </a>
         </div>
       </div>
-      <div class="col-start-3 row-span-2 isolate max-h-[440px] max-w-[476px] border-y sm:border border-base-100 relative overflow-hidden">
+      <div class="col-start-3 row-span-2 isolate lg:max-h-[440px] lg:max-w-[476px] border-y sm:border border-base-100 relative overflow-hidden">
         <Icon id="CardBackground" size={476} class="w-[130%]" />
         {/* teste */}
         <script

@@ -83,19 +83,19 @@ function Footer(
     <footer class="w-full flex flex-col pb-36 ">
       <div>
         <div class="w-full flex flex-col text-white">
-          <FooterContainer class="grid grid-cols-[1.25fr_1fr] grid-flow-row lg:grid-cols-[1fr_.5fr_1.25fr_1.25fr_.25fr_1.5fr] lg:grid-rows-2 gap-4 ">
+          <FooterContainer class="grid grid-cols-[1.25fr_1fr] grid-flow-row md:grid-cols-[1fr_.5fr_1.25fr_1.25fr_.25fr_1.5fr] md:grid-rows-2 gap-4 ">
             <a
               href="https://www.ng.cash/duvidas-frequentes"
-              class="block font-bold text-[6vw] lg:text-[2vw] px-6 py-8 uppercase border border-white rounded-2xl leading-none col-span-2 lg:col-span-1"
+              class="block font-bold text-[6vw] md:text-[2vw] px-6 py-8 uppercase border border-white rounded-2xl leading-none col-span-2 md:col-span-1 font-mono"
             >
               Dúvidas frequentes
             </a>
-            <div class="border border-white rounded-2xl lg:row-span-2  flex-col justify-between row-start-2 lg:row-start-auto col-span-2 lg:col-span-1 contents lg:flex">
+            <div class="border border-white rounded-2xl md:row-span-2  flex-col justify-between row-start-2 md:row-start-auto col-span-2 md:col-span-1 contents md:flex">
               <a
                 href="/termos-de-uso"
-                class="flex flex-col gap-4 py-8 p-6 leading-none border border-white rounded-2xl  lg:border-none "
+                class="flex flex-col gap-4 py-8 p-6 leading-none border border-white rounded-2xl md:border-none "
               >
-                <span class="uppercase font-semibold text-[6vw] lg:text-[2vw]">
+                <span class="uppercase font-semibold text-[6vw] md:text-[2vw] font-mono">
                   Termos de uso
                 </span>
                 <div>
@@ -108,12 +108,12 @@ function Footer(
                   />
                 </div>
               </a>
-              <div class="bg-white h-[1px] hidden lg:block" />
+              <div class="bg-white h-[1px] hidden md:block" />
               <a
                 href="/politica-de-privacidade"
                 class="flex flex-col gap-8 align-bottom  pt-8 px-6 leading-none  border border-white rounded-2xl  lg:border-none "
               >
-                <span class="uppercase font-semibold text-[6vw] lg:text-[2vw]">
+                <span class="uppercase font-semibold text-[6vw] md:text-[2vw]">
                   Política de Privacidade
                 </span>
                 <div>
@@ -127,8 +127,8 @@ function Footer(
                 </div>
               </a>
             </div>
-            <div class="border border-white rounded-2xl lg:row-start-2 lg:col-start-3 col-span-2 divide-white divide-y">
-              <div class="uppercase py-4 px-6 text-[6vw] lg:text-[2vw] font-bold leading-none ">
+            <div class="border border-white rounded-2xl md:row-start-2 md:col-start-3 col-span-2 divide-white divide-y">
+              <div class="uppercase py-4 px-6 text-[6vw] md:text-[2vw] font-bold leading-none font-mono">
                 Se Der Beyblade:
               </div>
               <div class="py-4 px-6">
@@ -178,10 +178,10 @@ function Footer(
                 </li>
               ))}
             </ul>
-            <div class="flex hover:text-[#7d2cff] text-white lg:[writing-mode:vertical-rl] lg:rotate-180 uppercase justify-center border border-base-100 text-[6vw] h-[60px] lg:h-auto lg:text-[1.8vw] font-semibold px-1 rounded-2xl items-center col-span-2 lg:col-span-1 row-start-4 lg:row-start-auto">
+            <div class="flex hover:text-[#7d2cff] text-white md:[writing-mode:vertical-rl] md:rotate-180 uppercase justify-center border border-base-100 text-[6vw] h-[60px] md:h-auto md:text-[1.8vw] font-semibold px-1 rounded-2xl items-center col-span-2 md:col-span-1 row-start-4 md:row-start-auto">
               Baixe Agora
             </div>
-            <div class="hidden lg:flex px-3 items-center justify-center border border-base-100 rounded-2xl">
+            <div class="hidden md:flex px-3 items-center justify-center border border-base-100 rounded-2xl">
               <Image
                 src={qrCode}
                 alt="qrcode"
@@ -190,16 +190,16 @@ function Footer(
                 class="w-full max-w-[288px]"
               />
             </div>
-            <div class="flex flex-col border border-white rounded-2xl p-4 text-white lg:col-start-5 col-span-2 gap-4">
+            <div class="flex flex-col border border-white rounded-2xl p-4 text-white md:col-start-5 col-span-2 gap-4">
               <a
                 href="https://app.ng.cash/UB8S/rho4elo5"
-                class="block border border-white rounded-2xl p-6 text-[4vw] lg:text-[1.6vw]"
+                class="block border border-white rounded-2xl p-6 text-[4vw] md:text-[1.6vw]"
               >
                 Baixar na <br /> APP Store
               </a>
               <a
                 href="https://app.ng.cash/UB8S/rho4elo5"
-                class="block border border-white rounded-2xl p-6 text-[4vw] lg:text-[1.6vw]"
+                class="block border border-white rounded-2xl p-6 text-[4vw] md:text-[1.6vw]"
               >
                 Baixar na<br /> Google play
               </a>

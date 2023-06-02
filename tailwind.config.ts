@@ -29,6 +29,9 @@ export default {
     container: {
       center: true,
     },
+    fontFamily: {
+      "mono": ["IBM Plex Mono", "IBM Plex Sans", "ui-monospace"],
+    },
     extend: {
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",

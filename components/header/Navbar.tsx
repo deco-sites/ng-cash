@@ -17,7 +17,7 @@ function Navbar({ items, searchbar, mainButton, floatMenu }: {
       {/* Mobile Version */}
       <div
         style={{ height: navbarHeight }}
-        class="md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full py-6 pl-4 pr-3 gap-2"
+        class="lg:hidden flex flex-row justify-between items-center border-b border-base-200 w-full py-6 pl-4 pr-3 gap-2"
       >
         <a
           href="/"
@@ -90,7 +90,7 @@ function Navbar({ items, searchbar, mainButton, floatMenu }: {
       )}
 
       {/* Desktop Version */}
-      <div class="hidden md:flex flex-row justify-between items-center border-b border-base-100 w-full h-[70px]">
+      <div class="hidden lg:flex flex-row justify-between items-center border-b border-base-100 w-full h-[70px]">
         <div class="flex-none w-44">
           <a
             href="/"
