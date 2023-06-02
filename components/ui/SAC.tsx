@@ -12,7 +12,7 @@ function SAC({ href }: Props) {
   return (
     <a
       href={href}
-      class="fixed group bottom-[18%] right-0 z-40 bg-white flex items-center"
+      class="hidden md:flex fixed group bottom-[18%] right-0 z-40 bg-white items-center border border-black"
       aria-label="Chat on WhatsApp"
     >
       <button

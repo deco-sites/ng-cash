@@ -4,15 +4,15 @@ import { headerHeight } from "./constants.ts";
 export interface INavItem {
   label: string;
   href: string;
-  children?: INavItem[];
   highlight?: boolean;
+  onlyMobile?: boolean;
 }
 
 function NavItem({ item }: { item: INavItem }) {
-  const { href, label, children } = item;
+  const { href, label, onlyMobile } = item;
 
   return (
-    <li class="group flex items-center">
+    <li class={`group flex items-center ${onlyMobile ? "flex lg:hidden" : ""}`}>
       <a href={href} class="px-4 py-3">
         <span class="group-hover:underline">
           {label}

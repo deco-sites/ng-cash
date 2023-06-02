@@ -28,7 +28,10 @@ export type BorderRadius =
 export interface Props {
   title: string;
   banner: Banner;
-  backgroundImg: LiveImage;
+  backgroundImg: {
+    srcMobile: LiveImage;
+    srcDesktop?: LiveImage;
+  };
 }
 
 export default function BannerWithText({
@@ -40,26 +43,43 @@ export default function BannerWithText({
     <section
       class={`relative w-full mx-auto isolate`}
     >
-      <Image
-        src={backgroundImg}
-        width={1000}
-        height={400}
-        class="inset-0 w-full max-h-full absolute -z-10"
-      />
-      <div class="px-[200px] py-[10%] items-center grid grid-cols-[.25fr_auto] gap-[130px] ">
+      <Picture>
+        <Source
+          media="(max-width: 767px)"
+          src={backgroundImg.srcMobile}
+          width={500}
+          height={500}
+        />
+        <Source
+          media="(min-width: 768px)"
+          src={backgroundImg.srcDesktop
+            ? backgroundImg.srcDesktop
+            : backgroundImg.srcMobile}
+          width={1000}
+          height={400}
+        />
+        <img
+          class=" inset-0 w-full lg:max-w-full absolute -z-10"
+          sizes="(max-width: 640px) 100vw, 30vw"
+          src={backgroundImg.srcMobile}
+          decoding="async"
+          loading="lazy"
+        />
+      </Picture>
+      <div class="py-16 px-8 sm:px-[200px] sm:py-[10%] items-center flex flex-col lg:flex-row lg:grid lg:grid-cols-[.25fr_auto] gap-5  lg:gap-[130px] ">
         <div
-          class={`grid gap-4 md:gap-6 w-[320px] `}
+          class={`grid gap-4 md:gap-6 w-[170px] lg:w-[320px] `}
         >
           <a
             href={banner.href}
             class={`overflow-hidden`}
           >
-            <Picture class="w-[320px]">
+            <Picture>
               <Source
                 media="(max-width: 767px)"
                 src={banner.srcMobile}
-                width={100}
-                height={100}
+                width={170}
+                height={321}
               />
               <Source
                 media="(min-width: 768px)"
@@ -81,7 +101,7 @@ export default function BannerWithText({
         {title &&
           (
             <div class="py-6 md:py-0 md:pb-[40px] flex items-center mt-6 text-white">
-              <h2 class="text-[3vw] font-medium">
+              <h2 class="text-[6vw] lg:text-[3vw] font-medium">
                 {title}
               </h2>
             </div>

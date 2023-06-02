@@ -169,6 +169,31 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
 
   const timeout = interval && setInterval(onClickNext, interval);
 
+  let mouseDown = false;
+  let startX: number, scrollLeft: number;
+
+  const startDragging = function (e) {
+    mouseDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  };
+  const stopDragging = function (event) {
+    mouseDown = false;
+  };
+
+  slider.addEventListener("mousemove", (e) => {
+    e.preventDefault();
+    if (!mouseDown) return;
+    const x = e.pageX - slider.offsetLeft;
+    const scroll = x - startX;
+    slider.scrollLeft = scrollLeft - scroll;
+  });
+
+  // Add the event listeners
+  slider.addEventListener("mousedown", startDragging, false);
+  slider.addEventListener("mouseup", stopDragging, false);
+  slider.addEventListener("mouseleave", stopDragging, false);
+
   // Unregister callbacks
   return () => {
     for (let it = 0; it < (dots?.length ?? 0); it++) {

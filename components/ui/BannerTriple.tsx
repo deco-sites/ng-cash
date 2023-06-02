@@ -39,7 +39,7 @@ export default function BannerWithText({
 }: Props) {
   return (
     <section
-      class={`justify-center flex pl-[5%] pr-[10%] py-14  w-full mx-auto`}
+      class={`justify-center gap-6 lg:gap-0 flex flex-col lg:flex-row px-4 lg:pl-[5%] lg:pr-[10%] py-14  w-full mx-auto`}
     >
       <div
         class={`flex items-center `}
@@ -69,8 +69,8 @@ export default function BannerWithText({
           />
         </Picture>
       </div>
-      <div class="flex gap-8">
-        <Picture class="w-[320px]">
+      <div class="flex gap-8 justify-center">
+        <Picture class="w-[320px] max-w-[70%] lg:max-w-none">
           <Source
             media="(max-width: 767px)"
             src={bannerScreen2.srcMobile}
@@ -94,7 +94,7 @@ export default function BannerWithText({
             loading="lazy"
           />
         </Picture>
-        <Picture class="w-[320px]">
+        <Picture class="w-[320px] hidden lg:block ">
           <Source
             media="(max-width: 767px)"
             src={bannerScreen1.srcMobile}

@@ -1,10 +1,14 @@
 import Icon, {
   AvailableIcons,
 } from "deco-sites/fashion/components/ui/Icon.tsx";
-import Newsletter from "deco-sites/fashion/islands/Newsletter.tsx";
 import type { ComponentChildren } from "preact";
+import Image from "deco-sites/std/components/Image.tsx";
+
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export type IconItem = { icon: AvailableIcons };
+
+export type IconWithLink = { href: string } & IconItem;
 export type StringItem = {
   label: string;
   href: string;
@@ -23,15 +27,16 @@ const isIcon = (item: Item): item is IconItem =>
 
 function SectionItem({ item }: { item: Item }) {
   return (
-    <span class="text-primary-content">
+    <span class="text-white">
       {isIcon(item)
         ? (
-          <div class="border-base-100 border border-solid py-1.5 px-2.5">
+          <div class="border-base-100 border rounded-2xl border-solid p-3 lg:p-4 ">
             <Icon
               id={item.icon}
-              width={25}
-              height={20}
+              width={68}
+              height={68}
               strokeWidth={0.01}
+              class="max-w-[38px] max-h-[38px] lg:max-h-none lg:max-w-none "
             />
           </div>
         )
@@ -50,126 +55,206 @@ function FooterContainer(
     children: ComponentChildren;
   },
 ) {
-  return <div class={`py-6 px-4 sm:py-12 sm:px-0 ${_class}`}>{children}</div>;
+  return <div class={`py-6 px-4 sm:py-12 ${_class}`}>{children}</div>;
 }
 
 export interface Props {
   sections?: Section[];
+  socials?: IconWithLink[];
+  qrCode: LiveImage;
+  logo: LiveImage;
+  ngCardCustomizavel: LiveImage;
+  institutionalImage1: LiveImage;
+  institutionalImage2: LiveImage;
 }
 
-function Footer({ sections = [] }: Props) {
+function Footer(
+  {
+    sections = [],
+    socials,
+    qrCode,
+    logo,
+    ngCardCustomizavel,
+    institutionalImage1,
+    institutionalImage2,
+  }: Props,
+) {
   return (
-    <footer class="w-full flex flex-col divide-y divide-primary-content">
+    <footer class="w-full flex flex-col pb-36 ">
       <div>
-        <div class="container w-full flex flex-col divide-y divide-primary-content">
-          <FooterContainer>
-            <Newsletter />
-          </FooterContainer>
-
-          <FooterContainer>
-            {/* Desktop view */}
-            <ul class="hidden sm:flex flex-row gap-20">
-              {sections.map((section) => (
-                <li>
-                  <div>
-                    <span class="font-medium text-xl text-primary-content">
-                      {section.label}
-                    </span>
-
-                    <ul
-                      class={`flex ${
-                        isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                      } gap-2 pt-2 flex-wrap`}
-                    >
-                      {section.children.map((item) => (
-                        <li>
-                          <SectionItem item={item} />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            {/* Mobile view */}
-            <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
-              {sections.map((section) => (
-                <li>
-                  <span class="text-primary-content">
-                    <details>
-                      <summary>
-                        {section.label}
-                      </summary>
-
-                      <ul
-                        class={`flex ${
-                          isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                        } gap-2 px-2 pt-2`}
-                      >
-                        {section.children.map((item) => (
-                          <li>
-                            <SectionItem item={item} />
-                          </li>
-                        ))}
-                      </ul>
-                    </details>
+        <div class="w-full flex flex-col text-white">
+          <FooterContainer class="grid grid-cols-[1.25fr_1fr] grid-flow-row lg:grid-cols-[1fr_.5fr_1.25fr_1.25fr_.25fr_1.5fr] lg:grid-rows-2 gap-4 ">
+            <a
+              href="https://www.ng.cash/duvidas-frequentes"
+              class="block font-bold text-[6vw] lg:text-[2vw] px-6 py-8 uppercase border border-white rounded-2xl leading-none col-span-2 lg:col-span-1"
+            >
+              Dúvidas frequentes
+            </a>
+            <div class="border border-white rounded-2xl lg:row-span-2  flex-col justify-between row-start-2 lg:row-start-auto col-span-2 lg:col-span-1 contents lg:flex">
+              <a
+                href="/termos-de-uso"
+                class="flex flex-col gap-4 py-8 p-6 leading-none border border-white rounded-2xl  lg:border-none "
+              >
+                <span class="uppercase font-semibold text-[6vw] lg:text-[2vw]">
+                  Termos de uso
+                </span>
+                <div>
+                  <Image
+                    src={institutionalImage1}
+                    alt="Termos de uso"
+                    width={180}
+                    height={180}
+                    class="w-full max-w-[90%]"
+                  />
+                </div>
+              </a>
+              <div class="bg-white h-[1px] hidden lg:block" />
+              <a
+                href="/politica-de-privacidade"
+                class="flex flex-col gap-8 align-bottom  pt-8 px-6 leading-none  border border-white rounded-2xl  lg:border-none "
+              >
+                <span class="uppercase font-semibold text-[6vw] lg:text-[2vw]">
+                  Política de Privacidade
+                </span>
+                <div>
+                  <Image
+                    src={institutionalImage2}
+                    alt="Política de Privacidade"
+                    width={180}
+                    height={180}
+                    class="w-full"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="border border-white rounded-2xl lg:row-start-2 lg:col-start-3 col-span-2 divide-white divide-y">
+              <div class="uppercase py-4 px-6 text-[6vw] lg:text-[2vw] font-bold leading-none ">
+                Se Der Beyblade:
+              </div>
+              <div class="py-4 px-6">
+                <div>
+                  <a href="text-bold underline font-bold">
+                    Clique aqui para a central de atendimento
+                  </a>
+                </div>
+                <div>
+                  <span>
+                    Entre em contato com{" "}
+                    <a href="mailto:suporte@ng.cash">suporte@ng.cash</a>
                   </span>
+                </div>
+              </div>
+              <div class="py-4 px-6 text-[1.2vw]">
+                <div>
+                  <span>Não conseguiu resolver o seu problema?</span>
+                </div>
+                <div>
+                  <span>
+                    Entre em contato com{" "}
+                    <a href="mailto:suporte@ng.cash">suporte@ng.cash</a>
+                  </span>
+                </div>
+                <div>
+                  <span class="text-[1vw]">
+                    Atendimento de segunda a sexta, das 9h às 18h - exceto
+                    feriados.
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 sm:p-8 flex items-center border border-base-100 rounded-2xl lg:py-8 lg:pl-8 lg:pr-11">
+              <Image
+                src={logo}
+                alt="logo"
+                width={180}
+                height={180}
+                class="w-full"
+              />
+            </div>
+            <ul class="grid grid-cols-[auto_auto] grid-rows-[auto_auto] gap-2 lg:gap-4 justify-self-start content-start justify-items-start">
+              {socials?.map((item) => (
+                <li class="max-w-[80px] max-h-[80px] lg:max-w-[100px] lg:max-h-[100px]">
+                  <SectionItem item={item} />
                 </li>
               ))}
             </ul>
+            <div class="flex hover:text-[#7d2cff] text-white lg:[writing-mode:vertical-rl] lg:rotate-180 uppercase justify-center border border-base-100 text-[6vw] h-[60px] lg:h-auto lg:text-[1.8vw] font-semibold px-1 rounded-2xl items-center col-span-2 lg:col-span-1 row-start-4 lg:row-start-auto">
+              Baixe Agora
+            </div>
+            <div class="hidden lg:flex px-3 items-center justify-center border border-base-100 rounded-2xl">
+              <Image
+                src={qrCode}
+                alt="qrcode"
+                width={180}
+                height={180}
+                class="w-full max-w-[288px]"
+              />
+            </div>
+            <div class="flex flex-col border border-white rounded-2xl p-4 text-white lg:col-start-5 col-span-2 gap-4">
+              <a
+                href="https://app.ng.cash/UB8S/rho4elo5"
+                class="block border border-white rounded-2xl p-6 text-[4vw] lg:text-[1.6vw]"
+              >
+                Baixar na <br /> APP Store
+              </a>
+              <a
+                href="https://app.ng.cash/UB8S/rho4elo5"
+                class="block border border-white rounded-2xl p-6 text-[4vw] lg:text-[1.6vw]"
+              >
+                Baixar na<br /> Google play
+              </a>
+            </div>
+            <div class="hidden lg:flex col-start-1 row-start-2 align-bottom justify-center">
+              <Image
+                src={ngCardCustomizavel}
+                alt="NG Card Customizavel"
+                width={147}
+                height={150}
+                class="w-full max-w-[85%]"
+              />
+            </div>
           </FooterContainer>
         </div>
       </div>
 
       <div>
-        <div class="container w-full">
-          <FooterContainer class="flex justify-between w-full">
-            <span class="flex items-center gap-1 text-primary-content">
-              Powered by{" "}
-              <a
-                href="https://www.deco.cx"
-                aria-label="powered by https://www.deco.cx"
-              >
-                <Icon id="Deco" height={20} width={60} strokeWidth={0.01} />
-              </a>
-            </span>
-
-            <ul class="flex items-center justify-center gap-2">
-              <li>
-                <a
-                  href="https://www.instagram.com/deco.cx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram logo"
-                >
-                  <Icon
-                    class="text-primary-content"
-                    width={32}
-                    height={32}
-                    id="Instagram"
-                    strokeWidth={1}
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://www.deco.cx/discord"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Discord logo"
-                >
-                  <Icon
-                    class="text-primary-content"
-                    width={32}
-                    height={32}
-                    id="Discord"
-                    strokeWidth={5}
-                  />
-                </a>
-              </li>
-            </ul>
-          </FooterContainer>
+        <div class="container w-full bg-white overflow-hidden">
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}`,
+            }}
+          >
+          </style>
+          <div
+            className="loop-slider"
+            style={{
+              "--duration": `5000ms`,
+              "--direction": "reverse",
+            }}
+          >
+            <div className="flex w-fit 
+              [animation-name:_loop;]
+              [animation-timing-function:_linear;]
+              [animation-iteration-count:_infinite;]
+              [animation-direction:_var(--direction);]
+              [animation-duration:_var(--duration);]">
+              <span class="uppercase text-2xl whitespace-nowrap  mr-1">
+                Ng Cast Instituição de pagamento ltda. - cnpj 40.710.595 /0001-
+                93 &copy;
+              </span>
+              <span class="uppercase text-2xl whitespace-nowrap mr-1">
+                Ng Cast Instituição de pagamento ltda. - cnpj 40.710.595 /0001-
+                93 &copy;
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
