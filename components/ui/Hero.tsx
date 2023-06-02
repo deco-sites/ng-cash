@@ -43,7 +43,10 @@ export default function Hero({ qrCode, banner }: Props) {
         </div>
       </div>
       <div class="col-start-3 row-span-2 max-h-[440px] max-w-[476px] border-y sm:border border-base-100 relative overflow-hidden">
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" />
+        <script
+          src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+          defer
+        />
         {/* @ts-ignore */}
         <lottie-player
           src="https://uploads-ssl.webflow.com/6385128589ca38c0cb82b578/63c97aa31e909cd708a4e345_card_girando_475x340%20(2).json"
