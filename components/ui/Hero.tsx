@@ -50,6 +50,7 @@ export default function Hero({ qrCode, banner, card }: Props) {
           alt="card"
           width={476}
           height={440}
+          loading={"eager"}
           class="w-full min-w-[440px]"
         />
         {
@@ -89,7 +90,7 @@ export default function Hero({ qrCode, banner, card }: Props) {
             />
             <img
               class="object-cover w-full"
-              loading={"eager"}
+              loading={"lazy"}
               src={banner.desktop}
               alt={banner.alt}
             />
