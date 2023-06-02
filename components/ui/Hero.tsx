@@ -2,7 +2,6 @@ import Image from "deco-sites/std/components/Image.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 
 export interface Props {
   qrCode: { image: LiveImage; href: string };
@@ -43,13 +42,15 @@ export default function Hero({ qrCode, banner }: Props) {
           </a>
         </div>
       </div>
-      <div class="col-start-3 row-span-2 h-[440px] w-[476px] max-w-full border-y sm:border border-base-100 relative overflow-hidden">
-        <Icon
-          id="CardBackground"
-          size={476}
-          strokeWidth={1}
-          class="max-w-[200%]
-          min-w-[135%] absolute -left-16"
+      <div class="col-start-3 row-span-2 max-h-[440px] max-w-[476px] border-y sm:border border-base-100 relative overflow-hidden">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" />
+        {/* @ts-ignore */}
+        <lottie-player
+          src="https://uploads-ssl.webflow.com/6385128589ca38c0cb82b578/63c97aa31e909cd708a4e345_card_girando_475x340%20(2).json"
+          background="transparent"
+          speed="1"
+          style="width: 130%;"
+          autoplay
         />
       </div>
       <div class="col-start-1 row-start-3 col-span-3 border-y border-base-100">
