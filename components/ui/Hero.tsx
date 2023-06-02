@@ -77,7 +77,7 @@ export default function Hero({ qrCode, banner }: Props) {
             />
             <img
               class="object-cover w-full"
-              loading={"lazy"}
+              loading={"eager"}
               src={banner.desktop}
               alt={banner.alt}
             />
