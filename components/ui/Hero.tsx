@@ -44,32 +44,30 @@ export default function Hero({ qrCode, banner, card }: Props) {
           </a>
         </div>
       </div>
-      <div class="col-start-3 row-span-2 isolate lg:max-h-[440px] lg:max-w-[476px] border-y sm:border border-base-100 relative overflow-hidden">
+      <div class="col-start-3 row-span-2 isolate   lg:min-w-[440px] lg:max-h-[440px] lg:max-w-[476px] border-y sm:border border-base-100 relative overflow-hidden">
         <Image
           src={card}
           alt="card"
           width={476}
           height={440}
           loading={"eager"}
-          class="w-full min-w-[440px]"
+          class="w-full lg:absolute lg:-translate-x-1/2 left-1/2 object-fill"
         />
-        {
-          /* <Icon id="CardBackground" size={476} class="w-[130%]" />
+        {/* <Icon id="CardBackground" size={476} class="w-[130%]" /> */}
         <script
           src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
           defer
           async
         />
-        @ts-ignore
+        {/*@ts-ignore*/}
         <lottie-player
           src="https://uploads-ssl.webflow.com/6385128589ca38c0cb82b578/63c97aa31e909cd708a4e345_card_girando_475x340%20(2).json"
           background="transparent"
           speed="1"
           style="width: 130%;"
           autoplay
-          class="bg-black absolute z-10 top-0 "
-        /> */
-        }
+          class="bg-black absolute z-10 top-0 left-1/2 -translate-x-1/2"
+        />
       </div>
       <div class="col-start-1 row-start-3 col-span-3 border-y border-base-100">
         <a href={banner.href}>
