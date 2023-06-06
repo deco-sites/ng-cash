@@ -25,7 +25,7 @@ function ratings({ title, ratings = [], appStore, googlePlay }: Props) {
       {title &&
         (
           <div class="py-2 px-4 lg:px-8 md:pb-[40px] flex items-center border-b border-base-100">
-            <h2 class="text-[8vw] lg:text-[6.6vw] text-white font-semibold uppercase">
+            <h2 class="text-[8vw] font-mono lg:text-[6.6vw] text-white font-semibold uppercase">
               {title}
             </h2>
           </div>

@@ -2,8 +2,8 @@
   "imports": {
     "deco-sites/ng-cash/": "./",
     "deco-sites/fashion/": "./",
-    "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.9.23/",
-    "$live/": "https://denopkg.com/deco-cx/live@1.8.6/",
+    "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.9.28/",
+    "$live/": "https://denopkg.com/deco-cx/live@1.9.12/",
     "$fresh/": "https://denopkg.com/deco-cx/fresh@1.1.7/",
     "preact": "https://esm.sh/preact@10.13.2",
     "preact/": "https://esm.sh/preact@10.13.2/",

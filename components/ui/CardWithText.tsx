@@ -24,7 +24,7 @@ export default function CardWithText({
         <span class="text-[8vw] lg:text-[6vw] py-2 lg:py-0 font-bold uppercase border-y lg:border border-base-100 flex items-center px-4 lg:pl-9">
           NG.Card
         </span>
-        <span class="text-[8vw] lg:text-[6vw] py-2 lg:py-0 lg:ml-[-111px] px-4 lg:pl-[140px] font-bold uppercase border-y lg:border-l border-base-100 flex items-center text-transparent [-webkit-text-stroke:_1px_white]">
+        <span class="text-[8vw] lg:text-[6vw] py-2 lg:py-0 lg:ml-[-111px] px-4 md:pr-0 lg:pl-[140px] font-bold uppercase border-y lg:border-l border-base-100 flex items-center text-transparent [-webkit-text-stroke:_1px_white]">
           Nome personalizado
         </span>
         <span class="text-[8vw] lg:text-[6vw] py-2 lg:py-0 font-bold uppercase border-y lg:border border-base-100 flex items-center px-4 lg:pl-9 text-transparent [-webkit-text-stroke:_1px_white]">
